@@ -10,5 +10,7 @@ To run under Ubuntu (it may work in other distributions):
 
 2- Launch container with:
 
+```
 $ xhost local:root
 $ docker run --rm -v /tmp/.X11-unix:/tmp/.X11-unix --device=/dev/ttyUSB0 -e DISPLAY=$DISPLAY mpaolino/chirp
+```
