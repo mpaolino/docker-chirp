@@ -13,3 +13,9 @@ To run under Ubuntu (it may work in other distributions):
 $ xhost local:root
 $ docker run --rm -v /tmp/.X11-unix:/tmp/.X11-unix --device=/dev/ttyUSB0 -e DISPLAY=$DISPLAY mpaolino/chirp
 ```
+
+CHIRP runs inside the container with its own unprivileged user "chirp", you can mount any local directoy inside the container to be able to save and load configurations to the radio:
+
+```
+$ docker run --rm -v $HOME/my-chirp-directory:/home/chirp/configs -v /tmp/.X11-unix:/tmp/.X11-unix --device=/dev/ttyUSB0 -e DISPLAY=$DISPLAY mpaolino/chirp
+```
