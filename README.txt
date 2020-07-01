@@ -1,4 +1,4 @@
-CHIRP is a free, open-source tool for programming your amateur radio. It supports a large number of manufacturers and models, as well as provides a way to interface with multiple data sources and formats.
+[CHIRP](https://chirp.danplanet.com/projects/chirp/wiki/Home) is a free, open-source tool for programming your amateur radio. It supports a large number of manufacturers and models, as well as provides a way to interface with multiple data sources and formats.
 
 This is an unofficial container image for Linux.
 
@@ -6,9 +6,8 @@ Due to the fact that CHIRP is only Python 2.x compatible, it depends on old and 
 
 To run under Ubuntu (it may work in other distributions):
 
-1- Connect radio with USB (be sure a serial USB device exists in /dev/ttyUSB0 and your user have r/w access to it)
-
-2- Launch container with:
+1. Connect radio with USB (be sure a serial USB device exists in /dev/ttyUSB0 and your user have r/w access to it)
+2. Launch container with:
 
 ```
 $ xhost local:root
