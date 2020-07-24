@@ -28,4 +28,4 @@ Building your own image with this Dockerfile
 Edit the Dockerfile to use a different source tarball which will be [pulled from CHIRP website](https://trac.chirp.danplanet.com/chirp_daily/LATEST/) during the build process,
 or pass it the name of the tarball as argument with docker build:
 
-$ docker build -t chirp --build-arg=tarball=chirp-daily-20200622.tar.gz .
+$ docker build -t chirp --build-arg=tarball=chirp-daily-20200718.tar.gz .

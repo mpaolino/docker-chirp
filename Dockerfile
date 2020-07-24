@@ -1,5 +1,5 @@
 FROM debian:stretch-slim
-ARG tarball=chirp-daily-20200622.tar.gz
+ARG tarball=chirp-daily-20200718.tar.gz
 RUN useradd -md /home/chirp chirp
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
@@ -8,9 +8,9 @@ WORKDIR /usr/local
 RUN wget "https://trac.chirp.danplanet.com/chirp_daily/LATEST/SHA1SUM"
 RUN wget "https://trac.chirp.danplanet.com/chirp_daily/LATEST/$tarball"
 RUN sha1sum -c --ignore-missing SHA1SUM | grep $tarball | grep OK 
-RUN tar -xvzf $tarball
+RUN mkdir /usr/local/chirp
+RUN tar -C /usr/local/chirp --strip-components 1 -xvzf $tarball
 RUN rm $tarball
-RUN mkdir -p /root/.local/share
 USER chirp
 WORKDIR /home/chirp
-ENTRYPOINT /usr/local/chirp-daily-20200622/chirpw
+ENTRYPOINT /usr/local/chirp/chirpw
